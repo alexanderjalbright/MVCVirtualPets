@@ -11,17 +11,18 @@ namespace MVCVirtualPets.Controllers
     {
         public ViewResult Index()
         {
-            return View();
+            var myShelter = new Shelter();
+
+            return View(myShelter);
         }
 
         public ViewResult Details(int id)
         {
-            Dictionary<int,Pet> PetDict = new Dictionary<int,Pet>();
-            PetDict.Add(1, new Pet("Fido"));
-            PetDict.Add(2, new Pet("Fluffy"));
-            
+            var myShelter = new Shelter();
 
-                return View(PetDict[id]);
+            var model = myShelter.PetDict[id];
+
+            return View(model);
         }
     }
 }

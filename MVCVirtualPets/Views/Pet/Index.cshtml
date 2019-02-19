@@ -1,4 +1,4 @@
-﻿
+﻿@model MVCVirtualPets.Models.Shelter
 @{
     Layout = null;
 }
@@ -15,12 +15,14 @@
     <h1>Pets</h1>
     <p>Here's all your pets.</p>
     <ol>
-        <li>
-            <a href="/Pet/Details/1">Fido</a>
-        </li>
-        <li>
-            <a href="/Pet/Details/2">Fluffy</a>
-        </li>
+        @foreach(KeyValuePair<int,MVCVirtualPets.Models.Pet> pet in Model.PetDict)
+        {
+            <li>
+                <a href="/Pet/Details/@pet.Key">@pet.Value.Name</a>
+            </li>
+        }
+
+
     </ol>
     <a href="/">Back to Main Page</a>
 </body>
