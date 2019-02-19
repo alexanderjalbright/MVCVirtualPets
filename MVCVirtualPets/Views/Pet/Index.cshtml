@@ -15,7 +15,7 @@
     <h1>Pets</h1>
     <p>Here's all your pets.</p>
     <ol>
-        @foreach(KeyValuePair<int,MVCVirtualPets.Models.Pet> pet in Model.PetDict)
+        @foreach(var pet in Model.PetDict)
         {
             <li>
                 <a href="/Pet/Details/@pet.Key">@pet.Value.Name</a>

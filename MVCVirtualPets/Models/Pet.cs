@@ -12,11 +12,6 @@ namespace MVCVirtualPets.Models
             Name = name;
         }
 
-        public Pet()
-        {
-
-        }
-
-        public string Name { get; set; }
+        public string Name { get; private set; }
     }
 }
