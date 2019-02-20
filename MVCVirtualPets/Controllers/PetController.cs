@@ -4,23 +4,28 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using MVCVirtualPets.Models;
+using MVCVirtualPets.Repositories;
 
 namespace MVCVirtualPets.Controllers
 {
     public class PetController : Controller
     {
+        PetRepository petRepo;
+
+        public PetController()
+        {
+            petRepo = new PetRepository();
+        }
+
         public ViewResult Index()
         {
-            var myShelter = new Shelter();
-
-            return View(myShelter);
+            var model = petRepo.GetAll();
+            return View(model);
         }
 
         public ViewResult Details(int id)
         {
-            var myShelter = new Shelter();
-
-            var model = myShelter.PetDict[id];
+            var model = petRepo.GetById(id);
 
             return View(model);
         }
