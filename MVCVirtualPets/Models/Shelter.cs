@@ -13,9 +13,9 @@ namespace MVCVirtualPets.Models
         {
             PetDict = new Dictionary<int, Pet>()
             {
-                { 1, new Pet("Fido")},
-                { 2, new Pet("Fluffy") },
-                { 3, new Pet("Zappy") }
+                { 1, new Pet("Fido", 1)},
+                { 2, new Pet("Fluffy", 2) },
+                { 3, new Pet("Zappy", 3) }
             };
         }
     }
